@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User implements UserInterface
 {
-    /** @ORM\Id @Column(type="integer") @GeneratedValue(strategy="AUTO") **/
+    /** @ORM\Id @ORM\Column(type="integer") @ORM\GeneratedValue(strategy="AUTO") **/
     private $id;
 
     /** @ORM\Column(type="datetime", name="created_at") **/

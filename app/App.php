@@ -3,6 +3,7 @@
 namespace Mooc;
 
 use Johndodev\Kernel;
+use Mooc\Provider\EntityProvider;
 use Mooc\Provider\MonologProvider;
 use Mooc\Provider\SecurityProvider;
 use Mooc\Provider\SessionProvider;
@@ -26,6 +27,7 @@ class App extends Kernel
             new SecurityProvider(),
             new SessionProvider(),
             new WebProfilerProvider(),
+            new EntityProvider(),
         ];
     }
 }
