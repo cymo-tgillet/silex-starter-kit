@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <title>{% block title %}Geolid Mooc{% endblock %}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
+    {% block css %}{% endblock %}
+
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {% block js %}{% endblock %}
+
+    {% block metas %}{% endblock %}
+</head>
+
+{% block body %}
+    <body id="default">
+
+    <div class="container">
+        <div id="global">
+            {{ alert(app.session.flashbag) }}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    {% block js_bottom %}{% endblock %}
+    </body>
+{% endblock %}
+</html>

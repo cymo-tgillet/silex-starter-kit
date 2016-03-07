@@ -1,0 +1,19 @@
+{
+  "require": {
+    "johndodev/silex": "dev-master",
+    "johndodev/config-service-provider": "^1.0"
+  },
+  "repositories": [
+    {
+      "url": "https://github.com/johndodev/silex",
+      "type": "git"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Mooc\\": "app"
+    }
+  }
+}
