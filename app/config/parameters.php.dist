@@ -1,0 +1,7 @@
+<?php
+
+return [
+    'database.user' => 'user',
+    'database.password' => 'password',
+    'database.dbname' => 'dbname',
+];

@@ -6,9 +6,9 @@ return [
         'default' => [
             'driver'    => 'pdo_mysql',
             'host'      => '127.0.0.1',
-            'dbname'  	=> 'dbname',
-            'user'      => 'user',
-            'password'  => 'password',
+            'dbname'  	=> '%database.dbname%',
+            'user'      => '%database.user%',
+            'password'  => '%database.password%',
         ]
     ]
 ];
