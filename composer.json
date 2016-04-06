@@ -1,7 +1,6 @@
 {
   "require": {
-    "johndodev/silex": "dev-master",
-    "johndodev/config-service-provider": "^1.0"
+    "johndodev/silex": "dev-master"
   },
   "repositories": [
     {
