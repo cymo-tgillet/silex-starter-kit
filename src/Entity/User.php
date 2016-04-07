@@ -33,6 +33,9 @@ class User implements UserInterface
     /** @ORM\Column(type="string", name="passwd") **/
     private $password;
 
+    /** @ORM\Column(type="string", name="password_recovery_hash", nullable=true, unique=true) **/
+    private $passwordRecoveryHash;
+
 
     public function __construct()
     {
@@ -190,5 +193,21 @@ class User implements UserInterface
     {
         $this->plainPassword = $plainPassword;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPasswordRecoveryHash()
+    {
+        return $this->passwordRecoveryHash;
+    }
+
+    /**
+     * @param mixed $passwordRecoveryHash
+     */
+    public function setPasswordRecoveryHash($passwordRecoveryHash)
+    {
+        $this->passwordRecoveryHash = $passwordRecoveryHash;
     }
 }

@@ -12,6 +12,7 @@
 
     <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     {% block js %}{% endblock %}
 
     {% block metas %}{% endblock %}
@@ -20,14 +21,18 @@
 {% block body %}
     <body id="default">
 
-    <div class="container">
-        <div id="global">
-            {{ alert(app.session.flashbag) }}
-            {% block content %}{% endblock %}
-        </div>
-    </div>
+        <div class="container">
+            <div id="global">
+                {% include 'Common/header.html.twig' %}
+                {{ alert(app.session.flashbag) }}
+                {% block content %}{% endblock %}
 
-    {% block js_bottom %}{% endblock %}
+            </div>
+            {% include 'Common/footer.html.twig' %}
+        </div>
+
+        <script src="{{ asset('js/modal.js') }}"></script>
+        {% block js_bottom %}{% endblock %}
     </body>
 {% endblock %}
 </html>

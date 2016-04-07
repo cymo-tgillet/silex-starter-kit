@@ -1,0 +1,24 @@
+{% extends 'Layout/modal.html.twig' %}
+
+{% import "Layout/modal.html.twig" as modal %}
+
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{# Quand le formulaire est pas envoyé, on surcharge le contenu complet #}
+{% block modalContent %}
+        <div class="modal-content">
+            {{ form_start(form, {attr: {action: path('users.account.edit')}}) }}
+            {{ form_errors(form) }}
+            <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">Mon compte</h4></div>
+            <div class="modal-body">
+                {{ form_row(form.email, {label: 'E-mail'}) }}
+                {{ form_row(form.plainPassword.first, {label: 'Changer de mot de passe'}) }}
+                {{ form_row(form.plainPassword.second, {label: 'Confirmation du nouveau mot de passe'}) }}
+            </div>
+            <div class="modal-footer"><button type="submit" class="btn btn-primary">Valider</button></div>
+            {{ form_end(form) }}
+        </div>
+    {% if formValid %}
+        {{ modal.closeAndRefresh() }}
+    {% endif %}
+{% endblock %}

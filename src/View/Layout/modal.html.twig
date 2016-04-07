@@ -1,0 +1,28 @@
+{% set footer = block('footer') %}
+
+<div class="modal-dialog">
+    {% block modalContent %}
+        <div class="modal-content">
+        <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">{% block title %}{% endblock %}</h4></div>
+        <div class="modal-body">
+            {% block content %}{% endblock %}
+        </div>
+        {% if footer %}
+            <div class="modal-footer">{{ footer|raw }}</div>
+        {% endif %}
+    </div>
+    {% endblock %}
+</div>
+
+
+{% macro closeButton(label) %}
+    <button type="button" class="btn btn-default" data-dismiss="modal">{{ label | default('Ok') }}</button>
+{% endmacro %}
+
+{% macro closeAndRefresh() %}
+    <script>
+        modal.close(function() {
+            document.location.reload();
+        });
+    </script>
+{% endmacro %}

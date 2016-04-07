@@ -19,7 +19,7 @@ class Provider extends AbstractProvider implements ControllerProviderInterface, 
         /**
          * Chaque controller aura un service, par ex pour HomeController: controller.home
          */
-        foreach (['home'] as $controller) {
+        foreach (['home', 'user'] as $controller) {
             $controllerclass = '\App\Controller\\'.ucfirst($controller).'Controller';
 
             $container['controller.'.$controller] = function() use($controllerclass) {
@@ -36,7 +36,15 @@ class Provider extends AbstractProvider implements ControllerProviderInterface, 
         /** @var ControllerCollection $factory */
         $factory = $app['controllers_factory'];
 
-        $app->match('/', 'controller.home:indexAction')->bind('home');
+        // home
+        $factory->match('/', 'controller.home:indexAction')->bind('home');
+
+        // user
+        $factory->match('/signup', 'controller.user:signupAction')->bind('users.signup');
+        $factory->match('/login', 'controller.user:loginAction')->bind('users.login');
+        $factory->match('/passwordlost', 'controller.user:passwordLostAction')->bind('users.password.lost');
+        $factory->match('/passwordreset/{hash}', 'controller.user:passwordResetAction')->bind('users.password.reset');
+        $factory->match('/users/{user}/edit', 'controller.user:editAction')->bind('users.edit');
 
         return $factory;
     }

@@ -29,12 +29,14 @@ class UserListener
         /** @var Request $request */
         $request = $this->container['request_stack']->getCurrentRequest();
 
-        /** @var BcryptEncoder $passwordEncoder */
-        $passwordEncoder = $this->container['security.encoder.digest'];
-
-        // $user->setValidEmailHash(uniqid());
         $user->setCreatedAt(new \DateTime());
         $user->setCreatorIp($request->getClientIp());
-        $user->setPassword($passwordEncoder->encodePassword($user->getPlainPassword(), null));
+
+        // password
+        if ($user->getPlainPassword()) {
+            /** @var BcryptEncoder $passwordEncoder */
+            $passwordEncoder = $this->container['security.encoder.digest'];
+            $user->setPassword($passwordEncoder->encodePassword($user->getPlainPassword(), null));
+        }
     }
 }
