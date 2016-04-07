@@ -3,7 +3,7 @@
 return [
     'security.providers' => [
         'user' => [
-            'class' => 'Mooc\Entity\User',
+            'class' => 'App\Entity\User',
             'property' => 'email',
             'manager_name' => 'em',
         ]

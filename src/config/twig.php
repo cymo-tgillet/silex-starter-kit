@@ -12,5 +12,5 @@ return [
         'strict_variables' => true,
     ],
 
-    'twig.form.templates' => ['Form/default.html.twig'],
+    'twig.form.templates' => ['Form/bootstrap_3_horizontal_layout.html.twig'],
 ];

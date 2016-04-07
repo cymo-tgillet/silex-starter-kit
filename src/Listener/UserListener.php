@@ -1,8 +1,8 @@
 <?php
 
-namespace Mooc\Listener;
+namespace App\Listener;
 
-use Mooc\Entity\User;
+use App\Entity\User;
 use Johndodev\Security\BcryptEncoder;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Pimple\Container;

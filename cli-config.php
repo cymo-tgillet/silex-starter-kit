@@ -5,7 +5,7 @@
  */
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
-use Mooc\App;
+use App\App;
 
 $env = getenv('ENV') ?: App::ENV_DEV;
 $app = new App($env, $env == App::ENV_DEV);

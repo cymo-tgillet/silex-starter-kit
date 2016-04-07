@@ -18,7 +18,7 @@ return [
     // monolog
     //--------
     'monolog.logfile'   => __DIR__.'/../../var/logs/'.$container['env'].'.log',
-    'monolog.name'      => 'mooc-'.$container['env'],
+    'monolog.name'      => 'app-'.$container['env'],
 //    'sentry.dsn'        => null,
 
     // statsd

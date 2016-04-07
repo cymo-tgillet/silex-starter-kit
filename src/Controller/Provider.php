@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooc\Controller;
+namespace App\Controller;
 
 use Johndodev\Provider\AbstractProvider;
 use Pimple\Container;
@@ -20,7 +20,7 @@ class Provider extends AbstractProvider implements ControllerProviderInterface, 
          * Chaque controller aura un service, par ex pour HomeController: controller.home
          */
         foreach (['home'] as $controller) {
-            $controllerclass = '\Mooc\Controller\\'.ucfirst($controller).'Controller';
+            $controllerclass = '\App\Controller\\'.ucfirst($controller).'Controller';
 
             $container['controller.'.$controller] = function() use($controllerclass) {
                 return new $controllerclass();

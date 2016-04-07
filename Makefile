@@ -13,3 +13,6 @@ rights:
 
 db:
 	php vendor/bin/doctrine.php orm:schema-tool:update --force
+
+clear-cache:
+	sudo rm -rf var/cache/* && touch var/cache/.gitkeep

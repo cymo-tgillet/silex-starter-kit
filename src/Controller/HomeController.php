@@ -1,8 +1,8 @@
 <?php
 
-namespace Mooc\Controller;
+namespace App\Controller;
 
-use Mooc\App;
+use App\App;
 
 class HomeController
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooc\Entity;
+namespace App\Entity;
 
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * @ORM\EntityListeners({"Mooc\Listener\UserListener"})
+ * @ORM\EntityListeners({"App\Listener\UserListener"})
  * @ORM\Table(name="users")
  */
 class User implements UserInterface

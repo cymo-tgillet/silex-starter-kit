@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooc;
+namespace App;
 
 use Johndodev\Component\Config\ConfigProvider;
 use Johndodev\Kernel;

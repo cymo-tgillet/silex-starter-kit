@@ -17,6 +17,6 @@ return [
     ],
 
     'orm.entity_listeners' => [
-        'Mooc\Listener\UserListener' => 'user.listener',
+        'App\Listener\UserListener' => 'user.listener',
     ],
 ];

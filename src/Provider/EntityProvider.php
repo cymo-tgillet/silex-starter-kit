@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooc\Provider;
+namespace App\Provider;
 
 use Johndodev\ORM\EntityConverter;
 use Johndodev\Provider\AbstractProvider;
@@ -17,7 +17,7 @@ class EntityProvider extends AbstractProvider
         foreach (['user'] as $entity) {
             // repo
             $container[$entity.'.repository'] = function(Container $container) use ($entity) {
-                $class = 'Mooc\Entity\\'.ucfirst($entity);
+                $class = 'App\Entity\\'.ucfirst($entity);
                 return $container['em']->getRepository($class); // TODO orm->getManagerForclass()
             };
 

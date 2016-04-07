@@ -1,6 +1,6 @@
 <?php
 
-namespace Mooc\Provider;
+namespace App\Provider;
 
 use Johndodev\Provider\AbstractProvider;
 use Monolog\Logger;
