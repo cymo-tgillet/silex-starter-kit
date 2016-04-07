@@ -1,7 +1,10 @@
 /.idea
-/vendor
-/app/cache/*
-!/app/cache/.gitkeep
-/app/logs/*
-!/app/logs/.gitkeep
+/vendor/
 /app/config/parameters.php
+/web/upload/
+/var/logs/*
+!/var/logs/.gitkeep
+/var/sessions/*
+!/var/sessions/.gitkeep
+/var/cache/*
+!/var/cache/.gitkeep

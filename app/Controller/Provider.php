@@ -16,9 +16,16 @@ class Provider extends AbstractProvider implements ControllerProviderInterface, 
 {
     public function register(Container $container)
     {
-        $container['controller.home'] = function() {
-            return new HomeController();
-        };
+        /**
+         * Chaque controller aura un service, par ex pour HomeController: controller.home
+         */
+        foreach (['home'] as $controller) {
+            $controllerclass = '\Mooc\Controller\\'.ucfirst($controller).'Controller';
+
+            $container['controller.'.$controller] = function() use($controllerclass) {
+                return new $controllerclass();
+            };
+        }
     }
 
     /**

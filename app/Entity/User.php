@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
- * _ORM\EntityListeners({"Mooc\Listener\UserListener"})
+ * @ORM\EntityListeners({"Mooc\Listener\UserListener"})
  * @ORM\Table(name="users")
  */
 class User implements UserInterface
@@ -24,7 +24,7 @@ class User implements UserInterface
     /** @ORM\Column(type="string", length=64, name="creator_ip") **/
     private $creatorIp;
 
-    /** @ORM\Column(type="string") **/
+    /** @ORM\Column(type="string", unique=true) **/
     private $email;
 
     /** @var  string */
@@ -49,11 +49,6 @@ class User implements UserInterface
         $metadata->addPropertyConstraints('email', [
             new Assert\NotBlank(),
             new Assert\Email(),
-        ]);
-
-        // Password
-        $metadata->addPropertyConstraints('passwd', [
-            new Assert\NotBlank(),
         ]);
     }
 

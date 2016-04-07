@@ -2,13 +2,8 @@
 
 namespace Mooc;
 
+use Johndodev\Component\Config\ConfigProvider;
 use Johndodev\Kernel;
-use Mooc\Provider\EntityProvider;
-use Mooc\Provider\MonologProvider;
-use Mooc\Provider\SecurityProvider;
-use Mooc\Provider\SessionProvider;
-use Mooc\Provider\SwiftMailerProvider;
-use Mooc\Provider\WebProfilerProvider;
 
 class App extends Kernel
 {
@@ -18,16 +13,18 @@ class App extends Kernel
     protected function getProviders()
     {
         return [
-            new Provider\ConfigProvider(__DIR__.'/config'),
-            new Provider\DoctrineProvider(),
             new Provider\TwigProvider(),
             new Controller\Provider(),
-            new SwiftMailerProvider(),
-            new MonologProvider(),
-            new SecurityProvider(),
-            new SessionProvider(),
-            new WebProfilerProvider(),
-            new EntityProvider(),
+            new Provider\MonologProvider(),
+            new Provider\EntityProvider(),
+            new ConfigProvider([
+                __DIR__.'/config/config.php',
+                __DIR__.'/config/session.php',
+                __DIR__.'/config/twig.php',
+                __DIR__.'/config/email.php',
+                __DIR__.'/config/orm.php',
+                __DIR__.'/config/security.php',
+            ], __DIR__.'/config/parameters.php'),
         ];
     }
 }

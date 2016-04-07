@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "756b2f2fabb541ea24a6807b131e6eb2",
-    "content-hash": "6f66bef2f5e5d0aaed8a70b2221555d4",
+    "hash": "054538feaa3c85beb84e72df681bf040",
+    "content-hash": "8ca4eec3076ea76ec32d11b0ba895ae2",
     "packages": [
         {
             "name": "cocur/slugify",
@@ -718,7 +718,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johndodev/silex",
-                "reference": "6301826bbb0a65e1b5a4c205716a504191e05e88"
+                "reference": "0785e5e883e304b54f352243e41441a1071084c6"
             },
             "require": {
                 "cocur/slugify": "^2.0",
@@ -743,6 +743,9 @@
                 "symfony/validator": "^3.0",
                 "twig/twig": "^1.24"
             },
+            "require-dev": {
+                "symfony/var-dumper": "^3.0"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -756,7 +759,7 @@
                 }
             ],
             "description": "Silex with some usually required services providers already installed.",
-            "time": "2016-04-05 15:46:19"
+            "time": "2016-04-06 13:36:58"
         },
         {
             "name": "m6web/statsd",
@@ -2931,7 +2934,71 @@
             "time": "2016-01-25 21:22:18"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "symfony/var-dumper",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "3841ed86527d18ee2c35fe4afb1b2fc60f8fae79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/3841ed86527d18ee2c35fe4afb1b2fc60f8fae79",
+                "reference": "3841ed86527d18ee2c35fe4afb1b2fc60f8fae79",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "twig/twig": "~1.20|~2.0"
+            },
+            "suggest": {
+                "ext-symfony_debug": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "Resources/functions/dump.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\VarDumper\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony mechanism for exploring and dumping PHP variables",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "debug",
+                "dump"
+            ],
+            "time": "2016-03-10 10:34:12"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {

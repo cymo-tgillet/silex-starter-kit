@@ -1,7 +1,11 @@
 <?php
 
 return [
-    'database.user' => 'user',
-    'database.password' => 'password',
-    'database.dbname' => 'dbname',
+    'database.user' => '',
+    'database.password' => '',
+    'database.dbname' => '',
+
+    'email.host' => '',
+    'email.username' => '',
+    'email.password' => '',
 ];

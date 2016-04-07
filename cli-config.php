@@ -5,8 +5,10 @@
  */
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
+use Mooc\App;
 
-$app = new \Mooc\App(\Mooc\App::ENV_DEV, true); // TODO juste silex/application
-$app->register(new \Mooc\Provider\DoctrineProvider());
+$env = getenv('ENV') ?: App::ENV_DEV;
+$app = new App($env, $env == App::ENV_DEV);
+$app->boot();
 
 return ConsoleRunner::createHelperSet($app['em']);

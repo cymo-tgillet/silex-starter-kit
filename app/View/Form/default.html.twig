@@ -1,0 +1,15 @@
+{% extends "bootstrap_3_horizontal_layout.html.twig" %}
+
+{% block form_label_class -%}
+    col-md-4
+{%- endblock form_label_class %}
+
+{% block form_group_class -%}
+    col-md-8
+{%- endblock form_group_class %}
+
+{# juste pour la class btn-primary #}
+{% block button_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('btn-primary') ~ ' btn')|trim}) %}
+    {{- parent() -}}
+{%- endblock %}
